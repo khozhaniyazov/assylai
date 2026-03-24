@@ -12,15 +12,15 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&subset=cyrillic-ext&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Manrope"', 'sans-serif'],
-            heading: ['"Manrope"', 'sans-serif']
+            sans: ['"Inter"', 'sans-serif'],
+            heading: ['"Montserrat"', 'sans-serif']
           },
           colors: {
             brand: { 50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4', 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a', 950: '#042f2e' },
@@ -50,7 +50,7 @@
     
     .whatsapp-float {
       position: fixed; bottom: 24px; right: 24px; z-index: 50; width: 60px; height: 60px; border-radius: 50%;
-      background: #25D366; display: flex; items-align: center; justify-content: center;
+      background: #25D366; display: flex; align-items: center; justify-content: center;
       box-shadow: 0 10px 25px -5px rgba(37, 211, 102, 0.4); transition: transform 0.3s, box-shadow 0.3s;
     }
     .whatsapp-float:hover { transform: scale(1.05) translateY(-4px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.5); }
