@@ -13,19 +13,20 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&subset=cyrillic-ext&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&subset=cyrillic-ext&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
           fontFamily: {
-            sans: ['"Inter"', 'sans-serif'],
-            heading: ['"Montserrat"', 'sans-serif']
+            sans: ['"Manrope"', 'sans-serif'],
+            heading: ['"Playfair Display"', 'serif']
           },
           colors: {
-            brand: { 50: '#f0fdfa', 100: '#ccfbf1', 200: '#99f6e4', 300: '#5eead4', 400: '#2dd4bf', 500: '#14b8a6', 600: '#0d9488', 700: '#0f766e', 800: '#115e59', 900: '#134e4a', 950: '#042f2e' },
-            surface: { 50: '#f8fafc', 100: '#f1f5f9', 200: '#e2e8f0', 800: '#1e293b', 900: '#0f172a' },
+            brand: { 50: '#fff1ea', 100: '#ffe2d4', 200: '#ffc6ac', 300: '#ffa57d', 400: '#ff8452', 500: '#ff6a2b', 600: '#f3561f', 700: '#d84314', 800: '#b4340f', 900: '#8f2a0d' },
+            accent: { 50: '#ecf9f5', 100: '#d5f2e9', 200: '#afe4d5', 300: '#7ad1bc', 400: '#4abda3', 500: '#2aa58c', 600: '#1f8a75', 700: '#1a6e5f', 800: '#155449', 900: '#113f37' },
+            surface: { 50: '#fffaf5', 100: '#f7efe6', 200: '#eadfd3', 300: '#d8c8b8', 400: '#b9a79a', 500: '#9a857a', 600: '#7b6860', 700: '#5c4b46', 800: '#3f3330', 900: '#2a2220' },
           },
           animation: {
             'fade-up': 'fadeUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards',
@@ -56,11 +57,16 @@
     }
     .whatsapp-float:hover { transform: scale(1.05) translateY(-4px); box-shadow: 0 15px 30px -5px rgba(37, 211, 102, 0.5); }
     
-    .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.4); }
+    .glass-card { background: rgba(255, 250, 245, 0.92); backdrop-filter: blur(14px); border: 1px solid rgba(255,255,255,0.6); }
+    .soft-grid { background-image: radial-gradient(circle at 1px 1px, rgba(255, 106, 43, 0.08) 1px, transparent 0); background-size: 28px 28px; }
+    .grain { position: relative; }
+    .grain:before { content: ""; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140' viewBox='0 0 140 140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E"); mix-blend-mode: soft-light; pointer-events: none; }
+    .card-premium { background: rgba(255, 255, 255, 0.96); border: 1px solid rgba(234, 223, 211, 0.9); box-shadow: 0 28px 60px -45px rgba(63, 51, 48, 0.7), 0 14px 28px -22px rgba(63, 51, 48, 0.35); }
+    .card-premium:hover { box-shadow: 0 34px 70px -50px rgba(63, 51, 48, 0.7), 0 18px 34px -24px rgba(63, 51, 48, 0.35); }
   </style>
 </head>
 
-<body class="bg-surface-50 text-surface-800 font-sans leading-relaxed overflow-x-hidden antialiased">
+  <body class="bg-surface-50 text-surface-800 font-sans leading-relaxed overflow-x-hidden antialiased">
 
   <!-- WhatsApp Float -->
   <a href="https://wa.me/77773321002?text=Сәлеметсіз бе! Диагностикаға жазылғым келеді." target="_blank" class="whatsapp-float flex items-center justify-center" aria-label="WhatsApp">
@@ -68,25 +74,25 @@
   </a>
 
   <!-- SECTION 1: HERO -->
-  <section class="relative bg-white pt-20 pb-24 md:pt-32 md:pb-40 overflow-hidden border-b border-surface-100">
+  <section class="relative bg-white pt-20 pb-24 md:pt-32 md:pb-40 overflow-hidden border-b border-surface-100 soft-grid">
     <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-100/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
-    <div class="absolute top-20 right-1/4 w-96 h-96 bg-blue-100/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+    <div class="absolute top-20 right-1/4 w-96 h-96 bg-accent-100/40 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
 
     <div class="relative z-10 max-w-6xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
       <div class="text-center lg:text-left max-w-2xl mx-auto">
         <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-surface-50 border border-surface-200 text-surface-800 text-sm font-semibold mb-6 animate-fade-up">
           <i data-lucide="shield-check" class="w-4 h-4 text-brand-600"></i>
-          Орталық мамандары
+          Жылы орта · Нақты нәтижелер
         </div>
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold tracking-tight text-surface-900 leading-[1.1] mb-6 animate-fade-up anim-delay-1">
-          Балаңыз <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-blue-600">2–5 жаста</span>, <br class="hidden lg:block"/>бірақ сөйлемей ме?
+          Жылы әрі кәсіби ортада <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-accent-600">баланың сөзі</span> тез ашылады
         </h1>
         <p class="text-lg md:text-xl text-surface-600 mb-10 max-w-lg mx-auto lg:mx-0 animate-fade-up anim-delay-2">
-          Тәжірибелі мамандар тобы 1 ай ішінде алғашқы сөздердің шығуына, зейіні мен моторикасының дамуына кешенді түрде көмектеседі.
+          8+ жыл тәжірибесі бар мамандар командасы сөйлеу, зейін және моториканы кешенді түрде дамытуға көмектеседі. Алғашқы нәтижелер 4–6 аптада көрінеді.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start animate-fade-up anim-delay-3">
           <a href="#checker" class="inline-flex items-center justify-center gap-2 bg-brand-600 hover:bg-brand-700 text-white font-bold text-lg px-8 py-4 rounded-xl shadow-xl shadow-brand-500/20 transition-all duration-300 hover:-translate-y-1">
-            <i data-lucide="stethoscope" class="w-5 h-5"></i> Тесттен өту
+            <i data-lucide="stethoscope" class="w-5 h-5"></i> Диагностика бастау
           </a>
           <a href="#results" class="inline-flex items-center justify-center gap-2 bg-white text-surface-800 hover:bg-surface-50 font-bold text-lg px-8 py-4 rounded-xl border border-surface-200 transition-all duration-300">
             Нәтижелерді көру
@@ -94,7 +100,7 @@
         </div>
       </div>
       <div class="relative mx-auto lg:ml-auto max-w-md w-full animate-fade-up anim-delay-4">
-        <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-blue-100 rounded-3xl transform rotate-3 scale-105 opacity-50 z-0"></div>
+        <div class="absolute inset-0 bg-gradient-to-tr from-brand-200 to-accent-100 rounded-3xl transform rotate-3 scale-105 opacity-50 z-0"></div>
         <img src="hero.png" alt="Специалист проводит занятие" class="relative z-10 w-full rounded-3xl shadow-2xl border flex border-white/50 object-cover aspect-[4/5]"/>
         
         <div class="absolute -bottom-6 -left-6 z-20 glass-card rounded-2xl p-4 shadow-xl flex items-center gap-4 animate-float">
@@ -113,8 +119,8 @@
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <div class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Қандай маман қажет?</div>
-        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Тест өтіңіз — бағаны анықтаңыз</h2>
-        <p class="text-lg text-surface-600">Балаңызға қажет мамандарды және айлық шамасын дәл қазір есептеп біліңіз.</p>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Тесттен өтіңіз — нақты жоспар алыңыз</h2>
+        <p class="text-lg text-surface-600">Қажет мамандарды және айлық жоспарды бір минутта есептеп алыңыз.</p>
       </div>
 
       <div class="grid lg:grid-cols-12 gap-10">
@@ -123,7 +129,7 @@
           
           <label class="relative block cursor-pointer group">
             <input type="checkbox" class="symptom-cb sr-only" value="logoped" data-specialist="Логопед" data-price="48000">
-            <div class="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm hover:shadow-md flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
+            <div class="card-premium rounded-2xl p-6 flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
               <div class="w-7 h-7 mt-0.5 flex-shrink-0 border-2 border-surface-300 rounded bg-white flex items-center justify-center group-has-[:checked]:bg-brand-600 group-has-[:checked]:border-brand-600 transition-colors">
                 <i data-lucide="check" class="text-white w-4 h-4 opacity-0 scale-50 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100 transition-all duration-200"></i>
               </div>
@@ -136,7 +142,7 @@
 
           <label class="relative block cursor-pointer group">
             <input type="checkbox" class="symptom-cb sr-only" value="logomass" data-specialist="Логомассаж" data-price="40000">
-            <div class="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm hover:shadow-md flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
+            <div class="card-premium rounded-2xl p-6 flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
               <div class="w-7 h-7 mt-0.5 flex-shrink-0 border-2 border-surface-300 rounded bg-white flex items-center justify-center group-has-[:checked]:bg-brand-600 group-has-[:checked]:border-brand-600 transition-colors">
                 <i data-lucide="check" class="text-white w-4 h-4 opacity-0 scale-50 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100 transition-all duration-200"></i>
               </div>
@@ -149,7 +155,7 @@
 
           <label class="relative block cursor-pointer group">
             <input type="checkbox" class="symptom-cb sr-only" value="defect" data-specialist="Дефектолог" data-price="48000">
-            <div class="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm hover:shadow-md flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
+            <div class="card-premium rounded-2xl p-6 flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
               <div class="w-7 h-7 mt-0.5 flex-shrink-0 border-2 border-surface-300 rounded bg-white flex items-center justify-center group-has-[:checked]:bg-brand-600 group-has-[:checked]:border-brand-600 transition-colors">
                 <i data-lucide="check" class="text-white w-4 h-4 opacity-0 scale-50 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100 transition-all duration-200"></i>
               </div>
@@ -162,7 +168,7 @@
 
           <label class="relative block cursor-pointer group">
             <input type="checkbox" class="symptom-cb sr-only" value="afk" data-specialist="АФК" data-price="48000">
-            <div class="bg-white border border-surface-200 rounded-2xl p-6 shadow-sm hover:shadow-md flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
+            <div class="card-premium rounded-2xl p-6 flex items-start gap-5 group-has-[:checked]:bg-brand-50 group-has-[:checked]:border-brand-600 transition-all duration-200">
               <div class="w-7 h-7 mt-0.5 flex-shrink-0 border-2 border-surface-300 rounded bg-white flex items-center justify-center group-has-[:checked]:bg-brand-600 group-has-[:checked]:border-brand-600 transition-colors">
                 <i data-lucide="check" class="text-white w-4 h-4 opacity-0 scale-50 group-has-[:checked]:opacity-100 group-has-[:checked]:scale-100 transition-all duration-200"></i>
               </div>
@@ -176,7 +182,7 @@
 
         <!-- Result Calculator -->
         <div class="lg:col-span-5">
-          <div class="bg-white rounded-3xl p-8 shadow-xl border border-surface-100 lg:sticky lg:top-8">
+          <div class="card-premium rounded-3xl p-8 lg:sticky lg:top-8">
             <div class="flex items-center gap-3 mb-6 border-b border-surface-100 pb-4">
               <div class="p-2 bg-brand-50 text-brand-600 rounded-lg"><i data-lucide="calculator" class="w-6 h-6"></i></div>
               <h3 class="font-heading font-bold text-2xl text-surface-900">Нәтижеңіз</h3>
@@ -190,10 +196,10 @@
             <div id="checker-result" class="hidden">
               <div id="checker-specialists" class="mb-6 space-y-3"></div>
               
-              <div id="combo-badge" class="hidden bg-emerald-50 border border-emerald-200 rounded-xl p-4 mb-6 flex items-start gap-3 text-sm text-emerald-800">
-                <i data-lucide="badge-percent" class="w-5 h-5 flex-shrink-0 text-emerald-600 mt-0.5"></i>
+              <div id="combo-badge" class="hidden bg-accent-50 border border-accent-200 rounded-xl p-4 mb-6 flex items-start gap-3 text-sm text-accent-800">
+                <i data-lucide="badge-percent" class="w-5 h-5 flex-shrink-0 text-accent-600 mt-0.5"></i>
                 <div>
-                  <div class="font-bold text-emerald-900">Комбо тариф қосылды!</div>
+                  <div class="font-bold text-accent-900">Комбо тариф қосылды!</div>
                   Сізге -15% жеңілдік қолданылды
                 </div>
               </div>
@@ -222,53 +228,53 @@
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <div class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Сенім мен нәтиже</div>
-        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Біздің нәтижелер</h2>
-        <p class="text-lg text-surface-600">Нақты балалардың мысалдары және ата-аналардың пікірлері.</p>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Нақты нәтиже, нақты өзгеріс</h2>
+        <p class="text-lg text-surface-600">Нақты балалардың нәтижелері және ата-аналардың шынайы пікірлері.</p>
       </div>
 
       <!-- Results Grid -->
       <div class="grid md:grid-cols-3 gap-6 mb-20 fade-up-item">
-        <div class="bg-surface-50 rounded-3xl p-8 border border-surface-100 relative overflow-hidden group">
+        <div class="card-premium rounded-3xl p-8 relative overflow-hidden group">
           <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="trending-up" class="w-24 h-24 text-brand-900"></i></div>
           <div class="relative z-10">
             <div class="flex items-center gap-2 text-surface-500 font-medium text-sm mb-4 bg-white px-3 py-1.5 rounded-full w-max shadow-sm border border-surface-200">
-              <i data-lucide="x-circle" class="w-4 h-4 text-rose-500"></i> Бастапқы жағдай
+              <i data-lucide="x-circle" class="w-4 h-4 text-brand-500"></i> Бастапқы жағдай
             </div>
             <p class="font-heading font-bold text-surface-900 text-xl mb-6">3 жаста мүлдем сөйлемеген</p>
             <div class="h-px bg-surface-200 w-full mb-6"></div>
             <div class="flex items-center gap-3">
-              <div class="p-2 bg-emerald-100 text-emerald-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
-              <span class="text-emerald-700 font-semibold text-lg">1,5 айда алғашқы сөздер</span>
+              <div class="p-2 bg-accent-100 text-accent-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
+              <span class="text-accent-700 font-semibold text-lg">1,5 айда алғашқы сөздер</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-surface-50 rounded-3xl p-8 border border-surface-100 relative overflow-hidden group">
+        <div class="card-premium rounded-3xl p-8 relative overflow-hidden group">
           <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="trending-up" class="w-24 h-24 text-brand-900"></i></div>
           <div class="relative z-10">
             <div class="flex items-center gap-2 text-surface-500 font-medium text-sm mb-4 bg-white px-3 py-1.5 rounded-full w-max shadow-sm border border-surface-200">
-              <i data-lucide="x-circle" class="w-4 h-4 text-rose-500"></i> Бастапқы жағдай
+              <i data-lucide="x-circle" class="w-4 h-4 text-brand-500"></i> Бастапқы жағдай
             </div>
             <p class="font-heading font-bold text-surface-900 text-xl mb-6">4 жаста тек дыбыстар шығарған</p>
             <div class="h-px bg-surface-200 w-full mb-6"></div>
             <div class="flex items-center gap-3">
-              <div class="p-2 bg-emerald-100 text-emerald-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
-              <span class="text-emerald-700 font-semibold text-lg">2 айда сөйлем құрады</span>
+              <div class="p-2 bg-accent-100 text-accent-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
+              <span class="text-accent-700 font-semibold text-lg">2 айда сөйлем құрады</span>
             </div>
           </div>
         </div>
 
-        <div class="bg-surface-50 rounded-3xl p-8 border border-surface-100 relative overflow-hidden group">
+        <div class="card-premium rounded-3xl p-8 relative overflow-hidden group">
           <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-10 transition-opacity"><i data-lucide="trending-up" class="w-24 h-24 text-brand-900"></i></div>
           <div class="relative z-10">
             <div class="flex items-center gap-2 text-surface-500 font-medium text-sm mb-4 bg-white px-3 py-1.5 rounded-full w-max shadow-sm border border-surface-200">
-              <i data-lucide="x-circle" class="w-4 h-4 text-rose-500"></i> Бастапқы жағдай
+              <i data-lucide="x-circle" class="w-4 h-4 text-brand-500"></i> Бастапқы жағдай
             </div>
             <p class="font-heading font-bold text-surface-900 text-xl mb-6">ЗРР (Сөйлеудің кешігуі)</p>
             <div class="h-px bg-surface-200 w-full mb-6"></div>
             <div class="flex items-center gap-3">
-              <div class="p-2 bg-emerald-100 text-emerald-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
-              <span class="text-emerald-700 font-semibold text-lg">Тұрақты сөйлеу темпі</span>
+              <div class="p-2 bg-accent-100 text-accent-600 rounded-full"><i data-lucide="check" class="w-5 h-5"></i></div>
+              <span class="text-accent-700 font-semibold text-lg">Тұрақты сөйлеу темпі</span>
             </div>
           </div>
         </div>
@@ -276,34 +282,34 @@
 
       <!-- Reviews -->
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up-item anim-delay-2">
-        <div class="bg-white rounded-3xl p-8 shadow-lg shadow-surface-200/50 border border-surface-100">
+        <div class="card-premium rounded-3xl p-8">
           <div class="flex items-center gap-4 mb-6">
             <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-600 font-heading font-bold text-xl">A</div>
             <div>
               <div class="font-heading font-extrabold text-surface-900">Айгүл (Анасы)</div>
-              <div class="flex text-amber-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+              <div class="flex text-brand-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
             </div>
           </div>
           <p class="text-surface-600 leading-relaxed italic">«...рахмет сізге, бүгін соңғы сабақ еді. Баланың сөйлеуі алдыңғыдан өте жақсы. Логопед Жадыра апайға алғысымыз шексіз!»</p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg shadow-surface-200/50 border border-surface-100">
+        <div class="card-premium rounded-3xl p-8">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-heading font-bold text-xl">D</div>
+            <div class="w-12 h-12 rounded-full bg-accent-100 flex items-center justify-center text-accent-700 font-heading font-bold text-xl">D</div>
             <div>
               <div class="font-heading font-extrabold text-surface-900">Дінара</div>
-              <div class="flex text-amber-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+              <div class="flex text-brand-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
             </div>
           </div>
           <p class="text-surface-600 leading-relaxed italic">«...шын жүректен алғыс айтқым келеді. Орталық мамандарының арқасында балам анық сөйлеп кетті.»</p>
         </div>
 
-        <div class="bg-white rounded-3xl p-8 shadow-lg shadow-surface-200/50 border border-surface-100">
+        <div class="card-premium rounded-3xl p-8">
           <div class="flex items-center gap-4 mb-6">
-            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-heading font-bold text-xl">A</div>
+            <div class="w-12 h-12 rounded-full bg-brand-100 flex items-center justify-center text-brand-700 font-heading font-bold text-xl">A</div>
             <div>
               <div class="font-heading font-extrabold text-surface-900">Алаштің анасы</div>
-              <div class="flex text-amber-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
+              <div class="flex text-brand-400 mt-1"><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i><i data-lucide="star" class="fill-current w-4 h-4"></i></div>
             </div>
           </div>
           <p class="text-surface-600 leading-relaxed italic">«...жағдайымыз өте жақсы, сөйлеп жүр. Жадыра апай, сізге көп рахмет. Сіз сияқты өз ісінің нағыз маманы!»</p>
@@ -317,12 +323,12 @@
     <div class="max-w-6xl mx-auto px-6 lg:px-8">
       <div class="text-center max-w-2xl mx-auto mb-16">
         <div class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Қызметтер</div>
-        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Балаңыздың дамуына кешенді қарқын</h2>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-4 tracking-tight">Кешенді көмек, жылы қолдау</h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 fade-up-item">
         <!-- Service 1 -->
-        <div class="bg-white rounded-3xl p-8 border border-surface-100 hover:shadow-xl hover:shadow-brand-500/10 transition-all duration-300 group">
+        <div class="card-premium rounded-3xl p-8 transition-all duration-300 group">
           <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
             <i data-lucide="mic" class="w-6 h-6"></i>
           </div>
@@ -331,8 +337,8 @@
         </div>
         
         <!-- Service 2 -->
-        <div class="bg-white rounded-3xl p-8 border border-surface-100 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+        <div class="card-premium rounded-3xl p-8 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center text-accent-600 mb-6 group-hover:bg-accent-600 group-hover:text-white transition-colors">
             <i data-lucide="book-open-check" class="w-6 h-6"></i>
           </div>
           <h3 class="font-heading font-extrabold text-xl text-surface-900 mb-3">Дефектолог</h3>
@@ -340,8 +346,8 @@
         </div>
 
         <!-- Service 3 -->
-        <div class="bg-white rounded-3xl p-8 border border-surface-100 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-emerald-50 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 group-hover:bg-emerald-600 group-hover:text-white transition-colors">
+        <div class="card-premium rounded-3xl p-8 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-accent-50 rounded-2xl flex items-center justify-center text-accent-600 mb-6 group-hover:bg-accent-600 group-hover:text-white transition-colors">
             <i data-lucide="activity" class="w-6 h-6"></i>
           </div>
           <h3 class="font-heading font-extrabold text-xl text-surface-900 mb-3">АФК</h3>
@@ -349,8 +355,8 @@
         </div>
 
         <!-- Service 4 -->
-        <div class="bg-white rounded-3xl p-8 border border-surface-100 hover:shadow-xl hover:shadow-purple-500/10 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center text-purple-600 mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+        <div class="card-premium rounded-3xl p-8 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
             <i data-lucide="puzzle" class="w-6 h-6"></i>
           </div>
           <h3 class="font-heading font-extrabold text-xl text-surface-900 mb-3">Сенсорлық интеграция</h3>
@@ -358,8 +364,8 @@
         </div>
 
         <!-- Service 5 -->
-        <div class="bg-white rounded-3xl p-8 border border-surface-100 hover:shadow-xl hover:shadow-rose-500/10 transition-all duration-300 group">
-          <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center text-rose-600 mb-6 group-hover:bg-rose-600 group-hover:text-white transition-colors">
+        <div class="card-premium rounded-3xl p-8 transition-all duration-300 group">
+          <div class="w-14 h-14 bg-brand-50 rounded-2xl flex items-center justify-center text-brand-600 mb-6 group-hover:bg-brand-600 group-hover:text-white transition-colors">
             <i data-lucide="smile-plus" class="w-6 h-6"></i>
           </div>
           <h3 class="font-heading font-extrabold text-xl text-surface-900 mb-3">Логомассаж</h3>
@@ -375,7 +381,7 @@
             </div>
             <h3 class="font-heading font-extrabold text-xl text-white mb-2">Нақты Диагностика</h3>
             <p class="text-surface-300 text-sm mb-6">Барлық кешенді анықтайтын алғашқы қадам.</p>
-            <a href="#checker" class="inline-block bg-brand-500 hover:bg-brand-400 text-white font-bold px-6 py-3 rounded-xl transition-colors w-full">Бағаны есептеу</a>
+            <a href="#checker" class="inline-block bg-brand-500 hover:bg-brand-400 text-white font-bold px-6 py-3 rounded-xl transition-colors w-full">Тестке өту</a>
           </div>
         </div>
       </div>
@@ -387,14 +393,14 @@
     <div class="max-w-5xl mx-auto px-6 lg:px-8">
       <div class="flex flex-col md:flex-row items-center gap-16">
         <div class="w-64 h-64 md:w-[400px] md:h-[400px] flex-shrink-0 relative fade-up-item">
-          <div class="absolute inset-0 bg-gradient-to-br from-blue-100 to-brand-100 rounded-full transform -translate-x-6 translate-y-6"></div>
+          <div class="absolute inset-0 bg-gradient-to-br from-accent-100 to-brand-100 rounded-full transform -translate-x-6 translate-y-6"></div>
           <img src="specialist.jpg" alt="Маман Жадыра" class="relative z-10 w-full h-full object-cover rounded-full shadow-2xl border-8 border-white"/>
         </div>
         <div class="flex-1 text-center md:text-left fade-up-item anim-delay-2">
           <div class="text-brand-600 font-bold tracking-widest uppercase text-sm mb-3">Бас логопед</div>
           <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-surface-900 mb-6 tracking-tight">Жадыра Сапарбаевна</h2>
           <p class="text-lg text-surface-600 mb-8 leading-relaxed">
-            Жадыра Сапарбаевна — 8 жылдық тәжірибесі бар жоғары санатты логопед-дефектолог және «Assyl AI» орталығының жетекшісі. Ол тек дыбыстарды қойып қана қоймай, әр баланың тілін тауып, сеніміне кіре біледі. Күрделі жағдайлармен жұмыс істей отырып, көптеген ата-аналарға баласының алғашқы анық сөздерін есту бақытын сыйлады.
+            Жадыра Сапарбаевна — 8 жылдық тәжірибесі бар жоғары санатты логопед-дефектолог және «Assyl AI» орталығының жетекшісі. Әр балаға жұмсақ тәсілмен жақындап, ата-анамен тұрақты байланыс орнатады. Күрделі жағдайларда да нәтижеге бағытталған жоспар құрады.
           </p>
           
           <div class="flex flex-wrap gap-4 justify-center md:justify-start mb-8">
@@ -465,7 +471,7 @@
   </section>
 
   <!-- SECTION 7: FINAL FORM & FOOTER -->
-  <section class="bg-surface-900 text-white relative">
+  <section class="bg-surface-900 text-white relative grain">
     <div class="max-w-6xl mx-auto px-6 lg:px-8 py-24">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
         <!-- Copy context -->
@@ -473,11 +479,11 @@
           <div class="text-brand-400 font-bold tracking-widest uppercase text-sm mb-4">Алғашқы қадам</div>
           <h2 class="text-4xl md:text-5xl font-heading font-extrabold mb-6 tracking-tight">Баланың болашағы — бүгінгі қадамыңызда</h2>
           <p class="text-surface-300 text-lg mb-8 leading-relaxed">
-            Мәселені ертеңге қалдырмаңыз. Дәл қазір форманы толтырып, алғашқы байланыс орнатыңыз. Мамандарымыз сізге толық консультация береді.
+            Мәселені ертеңге қалдырмаңыз. Дәл қазір форманы толтырып, алғашқы байланыс орнатыңыз. Мамандарымыз жұмсақ әрі нақты консультация береді.
           </p>
 
           <div class="flex items-start gap-4 p-5 bg-surface-800/50 border border-surface-700 rounded-2xl mb-8">
-            <i data-lucide="badge-alert" class="w-6 h-6 text-rose-400 flex-shrink-0 mt-0.5"></i>
+            <i data-lucide="badge-alert" class="w-6 h-6 text-brand-400 flex-shrink-0 mt-0.5"></i>
             <div>
               <div class="font-bold text-white mb-1">Орын шектеулі!</div>
               <div class="text-surface-400 text-sm">Сапаны сақтау үшін қазір тек <strong>10 бала</strong> ғана қабылдаймыз. Апталық лимит толып қалуы мүмкін.</div>
@@ -491,7 +497,7 @@
         </div>
 
         <!-- Form Card -->
-        <div class="bg-white rounded-3xl p-8 shadow-2xl relative">
+        <div class="bg-white rounded-3xl p-8 shadow-2xl relative card-premium">
           <div class="absolute -top-4 -right-4 bg-brand-500 text-white text-xs font-bold px-4 py-2 rounded-full uppercase tracking-wide rotate-3 shadow-lg">Тегін Диагностика</div>
           <form class="space-y-6" onsubmit="handleSubmit(event)">
             <div>
@@ -505,7 +511,7 @@
             <button type="submit" id="submitBtn" class="w-full bg-surface-900 hover:bg-black text-white font-bold text-lg py-5 rounded-xl transition-all shadow-xl shadow-surface-900/20 active:scale-[0.98] flex items-center justify-center gap-2">
               Консультация алу <i data-lucide="arrow-right" class="w-5 h-5"></i>
             </button>
-            <div id="formSuccess" class="hidden text-center text-emerald-600 font-bold py-2 bg-emerald-50 rounded-lg border border-emerald-100">✅ Сәтті жіберілді! Хабарласамыз.</div>
+            <div id="formSuccess" class="hidden text-center text-accent-700 font-bold py-2 bg-accent-50 rounded-lg border border-accent-100">✅ Сәтті жіберілді! Хабарласамыз.</div>
           </form>
         </div>
       </div>
@@ -514,7 +520,7 @@
     <div class="border-t border-surface-800">
       <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-4 text-surface-400 text-sm">
         <div>© 2026 Assyl AI. Барлық құқықтар қорғалған.</div>
-        <div class="flex items-center gap-1">Created with <i data-lucide="heart" class="w-4 h-4 text-rose-500"></i> / Frontend Medical Aesthetics</div>
+        <div class="flex items-center gap-1">Created with <i data-lucide="heart" class="w-4 h-4 text-brand-500"></i> / Frontend Medical Aesthetics</div>
       </div>
     </div>
   </section>
