@@ -9,7 +9,6 @@ redirects = []
 [build]
 publish = "C:\\Users\\Zhanserik\\assyl-ai-landing"
 publishOrigin = "default"
-base = "C:\\Users\\Zhanserik\\assyl-ai-landing"
 
 [build.environment]
 
