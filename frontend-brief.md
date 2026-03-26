@@ -150,11 +150,3 @@ This brief captures the current landing structure and content so you can rebuild
 - `specialist.jpg` — specialist portrait.
 - `specialist.png` — optional alternative portrait.
 
-## Interactive behavior notes (for handoff)
-- Hero and section elements animate on scroll (fade-up).
-- WhatsApp float is always visible.
-- Quick assessment updates the result card and WhatsApp link.
-- Form submission shows “Sent” state and opens WhatsApp with prefilled message.
-
-## Copy consistency note
-- The top location line uses “Маңғыстау қ.” while the footer address uses “Ақтау қ.” in the current page. Decide one and keep consistent in the new design.
